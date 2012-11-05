@@ -29,13 +29,13 @@ namespace NFake.Core.Expectations
 
         private int _invocationCount;
 
-        private Func<bool> _timesConstraint;
+        private List<IConstraint> _constraints;
 
         protected ExpectationBase()
         {
             _exception = null;
             _invocationCount = 0;
-            _timesConstraint = () => true;
+            _constraints = new List<IConstraint>();
         }
 
         public long Token
@@ -61,8 +61,11 @@ namespace NFake.Core.Expectations
 
         public void Verify()
         {
-            if (!_timesConstraint())
-                throw new ExpectationException(String.Format("Invalid invocation count for '{0}'", Method));
+            foreach (var constraint in _constraints)
+            {
+                if (!constraint.Evaluate())
+                    throw new ExpectationException(String.Format("Constraint violation for '{0}'", Method));
+            }
         }
 
         #region IThrows Members
@@ -93,19 +96,25 @@ namespace NFake.Core.Expectations
         /// <inheritdoc/>
         public void Exactly(int times)
         {
-            _timesConstraint = () => (times == _invocationCount);
+            var constraint = new AnonymousConstraint(() => (times == _invocationCount));
+
+            _constraints.Add(constraint);
         }
 
         /// <inheritdoc/>
         public void AtMost(int times)
         {
-            _timesConstraint = () => (times >= _invocationCount);
+            var constraint = new AnonymousConstraint(() => (times >= _invocationCount));
+
+            _constraints.Add(constraint);
         }
 
         /// <inheritdoc/>
         public void AtLeast(int times)
         {
-            _timesConstraint = () => (times <= _invocationCount);
+            var constraint = new AnonymousConstraint(() => (times <= _invocationCount));
+
+            _constraints.Add(constraint);
         }
 
         #endregion
