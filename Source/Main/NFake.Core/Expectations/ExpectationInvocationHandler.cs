@@ -17,6 +17,7 @@
 //
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using NProxy.Core;
 
 namespace NFake.Core.Expectations
@@ -52,7 +53,7 @@ namespace NFake.Core.Expectations
         #region IInvocationHandler Members
 
         /// <inheritdoc/>
-        public object Invoke(object target, System.Reflection.MethodInfo methodInfo, object[] parameters)
+        public object Invoke(object target, MethodInfo methodInfo, object[] parameters)
         {
             ExpectationBase expectation;
 
