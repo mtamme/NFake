@@ -17,6 +17,7 @@
 //
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using NFake.Core.Language;
@@ -25,17 +26,18 @@ namespace NFake.Core.Expectations
 {
     internal abstract class ExpectationBase : IThrows, ITimes
     {
+        private readonly List<IConstraint> _constraints;
+
         private Exception _exception;
 
         private int _invocationCount;
 
-        private List<IConstraint> _constraints;
-
         protected ExpectationBase()
         {
+            _constraints = new List<IConstraint>();
+
             _exception = null;
             _invocationCount = 0;
-            _constraints = new List<IConstraint>();
         }
 
         public long Token
@@ -61,11 +63,8 @@ namespace NFake.Core.Expectations
 
         public void Verify()
         {
-            foreach (var constraint in _constraints)
-            {
-                if (!constraint.Evaluate())
-                    throw new ExpectationException(String.Format("Constraint violation for '{0}'", Method));
-            }
+            if (_constraints.Any(c => !c.Evaluate()))
+                throw new ExpectationException(String.Format("Constraint violation for '{0}'", Method));
         }
 
         #region IThrows Members

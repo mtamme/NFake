@@ -6,6 +6,7 @@
   </Assemblies>
   <FrameworkAssemblies>
     <Name>mscorlib</Name>
+    <Name>NProxy.Core</Name>
     <Name>System.Core</Name>
     <Name>System</Name>
   </FrameworkAssemblies>
