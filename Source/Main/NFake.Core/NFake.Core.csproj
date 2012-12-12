@@ -30,11 +30,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NProxy.Core">
-      <HintPath>..\..\..\Lib\NProxy\NProxy.Core.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="NProxy.Core">
+      <HintPath>..\..\..\Packages\NProxy.Core.1.0.1\lib\net40\NProxy.Core.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Expectations\InvocationExpectation.cs" />
