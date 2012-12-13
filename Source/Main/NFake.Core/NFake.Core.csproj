@@ -73,4 +73,7 @@
   <ItemGroup />
   <ItemGroup />
   <ItemGroup />
+  <ItemGroup>
+    <None Include="NFake.Core.nuspec" />
+  </ItemGroup>
 </Project>
