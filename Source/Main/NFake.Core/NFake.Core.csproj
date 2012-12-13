@@ -33,7 +33,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="NProxy.Core">
-      <HintPath>..\..\..\Packages\NProxy.Core.1.0.1\lib\net40\NProxy.Core.dll</HintPath>
+      <HintPath>..\..\..\Lib\NProxy.Core.1.0.3\lib\net40\NProxy.Core.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
