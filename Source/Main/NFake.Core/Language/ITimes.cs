@@ -23,19 +23,19 @@ namespace NFake.Core.Language
     public interface ITimes : IFluent
     {
         /// <summary>
-        /// Specifies that the expected number of invocations should be exactly <see cref="times"/>.
+        /// Specifies that the expected number of invocations should be exactly times.
         /// </summary>
         /// <param name="times">The number of invocations.</param>
         void Exactly(int times);
 
         /// <summary>
-        /// Specifies that the expected number of invocations should be at most <see cref="times"/>.
+        /// Specifies that the expected number of invocations should be at most times.
         /// </summary>
         /// <param name="times">The number of invocations.</param>
         void AtMost(int times);
 
         /// <summary>
-        /// Specifies that the expected number of invocations should be at least <see cref="times"/>.
+        /// Specifies that the expected number of invocations should be at least times.
         /// </summary>
         /// <param name="times">The number of invocations.</param>
         void AtLeast(int times);

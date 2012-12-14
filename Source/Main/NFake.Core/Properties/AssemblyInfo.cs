@@ -24,9 +24,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("NFake.Core")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("NFake is a mocking library for the .NET framework.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Martin Tamme")]
 [assembly: AssemblyProduct("NFake.Core")]
 [assembly: AssemblyCopyright("Copyright © Martin Tamme 2012")]
 [assembly: AssemblyTrademark("")]
@@ -54,7 +54,6 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.0.0.*")]
 
 [assembly: InternalsVisibleTo("NFake.Core.Test")]

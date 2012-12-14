@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>NFake.Core</id>
-    <version>1.0.0</version>
-    <authors>Martin Tamme</authors>
-    <owners>Martin Tamme</owners>
+    <id>$id$</id>
+    <version>$version$</version>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
     <licenseUrl>https://github.com/mtamme/NFake/</licenseUrl>
     <projectUrl>https://github.com/mtamme/NFake/</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>NFake is a mocking library for the .NET framework.</description>
-    <copyright>Copyright 2012</copyright>
+    <description>$description$</description>
+    <copyright>$copyright$</copyright>
     <tags>mock object mocking library fluent interface</tags>
   </metadata>
   <files>
-    <file src="bin\Release\NFake.Core.dll" target="lib\net40"/>
-    <file src="bin\Release\NFake.Core.xml" target="lib\net40"/>
+    <file src="..\..\..\COPYING" target="COPYING" />
+    <file src="..\..\..\COPYING.LESSER" target="COPYING.LESSER" />
   </files>
 </package>
