@@ -31,11 +31,11 @@
     <DocumentationFile>bin\Release\NFake.Core.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NProxy.Core">
+      <HintPath>..\..\..\Lib\NProxy.Core.1.0.3.27351\lib\net40\NProxy.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="NProxy.Core">
-      <HintPath>..\..\..\Lib\NProxy.Core.1.0.3\lib\net40\NProxy.Core.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Expectations\InvocationExpectation.cs" />
