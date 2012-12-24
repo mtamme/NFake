@@ -19,6 +19,7 @@ using System;
 using System.Linq.Expressions;
 using NFake.Core.Expectations;
 using NFake.Core.Language;
+using NProxy.Core;
 
 namespace NFake.Core
 {
