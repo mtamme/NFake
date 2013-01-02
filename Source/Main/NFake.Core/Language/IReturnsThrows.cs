@@ -1,6 +1,6 @@
 ﻿//
 // NFake is a mocking library for the .NET framework.
-// Copyright © 2012 Martin Tamme
+// Copyright © Martin Tamme
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
