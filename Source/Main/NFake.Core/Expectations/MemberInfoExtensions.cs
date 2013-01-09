@@ -31,7 +31,7 @@ namespace NFake.Core.Expectations
         /// <returns>The unique identifier.</returns>
         public static long GetToken(this MemberInfo memberInfo)
         {
-            long moduleToken = memberInfo.Module.MetadataToken;
+            long moduleToken = memberInfo.Module.GetHashCode();
             long memberToken = memberInfo.MetadataToken;
 
             return (moduleToken << 32) | (memberToken & 0xffffffffL);
