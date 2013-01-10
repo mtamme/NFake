@@ -29,7 +29,7 @@ namespace NFake.Core.Expectations
         /// </summary>
         /// <param name="memberInfo">The member information.</param>
         /// <returns>The unique identifier.</returns>
-        public static long GetToken(this MemberInfo memberInfo)
+        public static long GetId(this MemberInfo memberInfo)
         {
             // FIXME The default implementation of the GetHashCode method
             // does not guarantee unique return values for different objects.

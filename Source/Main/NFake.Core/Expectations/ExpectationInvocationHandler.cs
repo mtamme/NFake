@@ -1,4 +1,4 @@
-﻿//
+//
 // NFake is a mocking library for the .NET framework.
 // Copyright © Martin Tamme
 //
@@ -39,7 +39,7 @@ namespace NFake.Core.Expectations
             if (expectation == null)
                 throw new ArgumentNullException("expectation");
 
-            _expectations.Add(expectation.Token, expectation);
+            _expectations.Add(expectation.Id, expectation);
         }
 
         public void VerifyExpectations()
@@ -57,7 +57,7 @@ namespace NFake.Core.Expectations
         {
             ExpectationBase expectation;
 
-            if (_expectations.TryGetValue(methodInfo.GetToken(), out expectation))
+            if (_expectations.TryGetValue(methodInfo.GetId(), out expectation))
                 return expectation.Verify(methodInfo, parameters);
 
             throw new ExpectationException(String.Format("Unexpected invocation for '{0}'", methodInfo));

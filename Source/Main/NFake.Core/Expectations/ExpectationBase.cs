@@ -1,4 +1,4 @@
-﻿//
+//
 // NFake is a mocking library for the .NET framework.
 // Copyright © Martin Tamme
 //
@@ -40,9 +40,9 @@ namespace NFake.Core.Expectations
             _invocationCount = 0;
         }
 
-        public long Token
+        public long Id
         {
-            get { return Method.GetToken(); }
+            get { return Method.GetId(); }
         }
 
         protected abstract MethodInfo Method { get; }
