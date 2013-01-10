@@ -31,10 +31,15 @@ namespace NFake.Core.Expectations
         /// <returns>The unique identifier.</returns>
         public static long GetToken(this MemberInfo memberInfo)
         {
-            long moduleToken = memberInfo.Module.GetHashCode();
-            long memberToken = memberInfo.MetadataToken;
+            // FIXME The default implementation of the GetHashCode method
+            // does not guarantee unique return values for different objects.
+            // Furthermore, the .NET Framework does not guarantee the default
+            // implementation of the GetHashCode method, and the value it returns
+            // will be the same between different versions of the .NET Framework.
+            long hashCode = memberInfo.Module.GetHashCode();
+            long metadataToken = memberInfo.MetadataToken;
 
-            return (moduleToken << 32) | (memberToken & 0xffffffffL);
+            return (hashCode << 32) | (metadataToken & 0xffffffffL);
         }
     }
 }
