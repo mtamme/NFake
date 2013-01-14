@@ -15,6 +15,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 //
+
 using System;
 
 namespace NFake.Core.Test.Types
@@ -23,7 +24,11 @@ namespace NFake.Core.Test.Types
     {
         #region IMocked Members
 
+#pragma warning disable 0067
+
         public virtual event Action Event;
+
+#pragma warning restore 0067
 
         public virtual int Property { get; set; }
 
