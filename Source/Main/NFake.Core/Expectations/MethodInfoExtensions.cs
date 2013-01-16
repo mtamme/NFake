@@ -21,26 +21,18 @@ using System.Reflection;
 namespace NFake.Core.Expectations
 {
     /// <summary>
-    /// Represents member information extensions.
+    /// Represents method information extensions.
     /// </summary>
-    internal static class MemberInfoExtensions
+    internal static class MethodInfoExtensions
     {
         /// <summary>
-        /// Returns a value which uniquely identifies a member.
+        /// Returns a value which uniquely identifies a method.
         /// </summary>
-        /// <param name="memberInfo">The member information.</param>
-        /// <returns>The unique identifier.</returns>
-        public static long GetId(this MemberInfo memberInfo)
+        /// <param name="methodInfo">The method information.</param>
+        /// <returns>A value which uniquely identifies a method.</returns>
+        public static MethodToken GetToken(this MethodInfo methodInfo)
         {
-            // FIXME The default implementation of the GetHashCode method
-            // does not guarantee unique return values for different objects.
-            // Furthermore, the .NET Framework does not guarantee the default
-            // implementation of the GetHashCode method, and the value it returns
-            // will be the same between different versions of the .NET Framework.
-            long hashCode = memberInfo.Module.GetHashCode();
-            long metadataToken = memberInfo.MetadataToken;
-
-            return (hashCode << 32) | (metadataToken & 0xffffffffL);
+            return new MethodToken(methodInfo);
         }
     }
 }

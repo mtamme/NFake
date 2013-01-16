@@ -39,6 +39,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Expectations\InvocationExpectation.cs" />
+    <Compile Include="Expectations\MethodToken.cs" />
     <Compile Include="Expectations\PropertySetExpectation.cs" />
     <Compile Include="Expectations\ExpectationBase.cs" />
     <Compile Include="Expectations\ExpectationException.cs" />
@@ -58,7 +59,7 @@
     <Compile Include="Mock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Language\IFluent.cs" />
-    <Compile Include="Expectations\MemberInfoExtensions.cs" />
+    <Compile Include="Expectations\MethodInfoExtensions.cs" />
     <Compile Include="Expectations\IConstraint.cs" />
     <Compile Include="Expectations\AnonymousConstraint.cs" />
   </ItemGroup>

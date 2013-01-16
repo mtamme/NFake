@@ -41,9 +41,9 @@ namespace NFake.Core.Expectations
             _invocationCount = 0;
         }
 
-        public long Id
+        public MethodToken MethodToken
         {
-            get { return Method.GetId(); }
+            get { return Method.GetToken(); }
         }
 
         protected abstract MethodInfo Method { get; }

@@ -28,11 +28,11 @@ namespace NFake.Core.Expectations
     /// </summary>
     internal sealed class ExpectationInvocationHandler : IInvocationHandler
     {
-        private readonly Dictionary<long, ExpectationBase> _expectations;
+        private readonly Dictionary<MethodToken, ExpectationBase> _expectations;
 
         public ExpectationInvocationHandler()
         {
-            _expectations = new Dictionary<long, ExpectationBase>();
+            _expectations = new Dictionary<MethodToken, ExpectationBase>();
         }
 
         public void AddExpectation(ExpectationBase expectation)
@@ -40,7 +40,7 @@ namespace NFake.Core.Expectations
             if (expectation == null)
                 throw new ArgumentNullException("expectation");
 
-            _expectations.Add(expectation.Id, expectation);
+            _expectations.Add(expectation.MethodToken, expectation);
         }
 
         public void VerifyExpectations()
@@ -58,7 +58,7 @@ namespace NFake.Core.Expectations
         {
             ExpectationBase expectation;
 
-            if (_expectations.TryGetValue(methodInfo.GetId(), out expectation))
+            if (_expectations.TryGetValue(methodInfo.GetToken(), out expectation))
                 return expectation.Verify(methodInfo, parameters);
 
             throw new ExpectationException(String.Format("Unexpected invocation for '{0}'", methodInfo));
