@@ -59,7 +59,7 @@ namespace NFake.Core.Expectations
             ExpectationBase expectation;
 
             if (_expectations.TryGetValue(methodInfo.GetToken(), out expectation))
-                return expectation.Verify(methodInfo, parameters);
+                return expectation.Invoke(methodInfo, parameters);
 
             throw new ExpectationException(String.Format("Unexpected invocation for '{0}'", methodInfo));
         }

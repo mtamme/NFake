@@ -52,7 +52,7 @@ namespace NFake.Core.Expectations
 
         protected abstract object ReturnValue { get; }
 
-        public object Verify(MethodInfo methodInfo, object[] parameters)
+        public object Invoke(MethodInfo methodInfo, object[] parameters)
         {
             _invocationCount++;
 
