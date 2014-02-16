@@ -30,7 +30,7 @@ namespace NFake.Test
         {
             var mock = new Mock<IMocked>();
 
-            mock.Expect(m => m.Method(2)).Returns("2").Once();
+            mock.ExpectCall(m => m.Method(2)).Returns("2").Once();
             mock.ExpectGet(m => m.Property).Gets(2).Never();
             mock.ExpectSet(m => m.Property).Sets(2).Never();
 
@@ -46,7 +46,7 @@ namespace NFake.Test
         {
             var mock = new Mock<MockedBase>();
 
-            mock.Expect(m => m.Method(2)).Returns("2").Once();
+            mock.ExpectCall(m => m.Method(2)).Returns("2").Once();
             mock.ExpectGet(m => m.Property).Gets(2).Never();
             mock.ExpectSet(m => m.Property).Sets(2).Never();
 
@@ -62,7 +62,7 @@ namespace NFake.Test
         {
             var mock = new Mock<Mocked>();
 
-            mock.Expect(m => m.Method(2)).Returns("2").Once();
+            mock.ExpectCall(m => m.Method(2)).Returns("2").Once();
             mock.ExpectGet(m => m.Property).Gets(2).Never();
             mock.ExpectSet(m => m.Property).Sets(2).Never();
 
@@ -78,7 +78,7 @@ namespace NFake.Test
         {
             var mock = new Mock<Func<int, string>>();
 
-            mock.Expect(m => m(2)).Returns("2").Once();
+            mock.ExpectCall(m => m(2)).Returns("2").Once();
 
             var value = mock.Object(2);
 

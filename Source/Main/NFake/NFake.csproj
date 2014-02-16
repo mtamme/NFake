@@ -36,7 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="NProxy.Core">
-      <HintPath>..\..\packages\NProxy.Core.2.0.1\lib\net35\NProxy.Core.dll</HintPath>
+      <HintPath>..\..\packages\NProxy.Core.2.1.0\lib\net35\NProxy.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

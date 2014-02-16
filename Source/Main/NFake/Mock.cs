@@ -93,7 +93,7 @@ namespace NFake
         /// </summary>
         /// <param name="lambdaExpression">The lambda expression.</param>
         /// <returns>The <c>Throws</c> verb.</returns>
-        public IThrows Expect(Expression<Action<TMock>> lambdaExpression)
+        public IThrows ExpectCall(Expression<Action<TMock>> lambdaExpression)
         {
             ExpectationBase expectation;
 
@@ -115,7 +115,7 @@ namespace NFake
         /// <typeparam name="TReturn">The return type.</typeparam>
         /// <param name="lambdaExpression">The lambda expression.</param>
         /// <returns>The <c>Returns</c> and <c>Throws</c> verbs.</returns>
-        public IReturnsThrows<TReturn> Expect<TReturn>(Expression<Func<TMock, TReturn>> lambdaExpression)
+        public IReturnsThrows<TReturn> ExpectCall<TReturn>(Expression<Func<TMock, TReturn>> lambdaExpression)
         {
             ExpectationBase expectation;
 
