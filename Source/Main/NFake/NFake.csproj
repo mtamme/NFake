@@ -35,8 +35,9 @@
     <DocumentationFile>bin\Release\NFake.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NProxy.Core">
-      <HintPath>..\..\packages\NProxy.Core.2.1.0\lib\net35\NProxy.Core.dll</HintPath>
+    <Reference Include="NProxy.Core, Version=2.2.1.23955, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\NProxy.Core.2.2.1\lib\net35\NProxy.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

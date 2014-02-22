@@ -26,7 +26,7 @@ namespace NFake.Expectations
         /// <summary>
         /// Evaluates the constraint.
         /// </summary>
-		/// <returns>A value indication whether the constraint is fulfilled.</returns>
+        /// <returns>A value indication whether the constraint is fulfilled.</returns>
         bool Evaluate();
     }
 }
