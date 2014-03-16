@@ -25,14 +25,29 @@ using NFake.Language;
 
 namespace NFake.Expectations
 {
+    /// <summary>
+    /// Represents an expectation base class.
+    /// </summary>
     internal abstract class ExpectationBase : IThrows, ITimes
     {
+        /// <summary>
+        /// The constraints.
+        /// </summary>
         private readonly List<IConstraint> _constraints;
 
+        /// <summary>
+        /// The exception.
+        /// </summary>
         private Exception _exception;
 
+        /// <summary>
+        /// The invocation count.
+        /// </summary>
         private int _invocationCount;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExpectationBase"/> class.
+        /// </summary>
         protected ExpectationBase()
         {
             _constraints = new List<IConstraint>();
@@ -41,17 +56,34 @@ namespace NFake.Expectations
             _invocationCount = 0;
         }
 
+        /// <summary>
+        /// Returns the method token.
+        /// </summary>
         public MethodToken MethodToken
         {
-            get { return Method.GetToken(); }
+            get { return new MethodToken(Method); }
         }
 
+        /// <summary>
+        /// Returns the method.
+        /// </summary>
         protected abstract MethodInfo Method { get; }
 
+        /// <summary>
+        /// Returns the arguments.
+        /// </summary>
         protected abstract ICollection<Expression> Arguments { get; }
 
+        /// <summary>
+        /// Returns the return value.
+        /// </summary>
         protected abstract object ReturnValue { get; }
 
+        /// <summary>
+        /// Handles an invocation.
+        /// </summary>
+        /// <param name="methodInfo">The method information.</param>
+        /// <param name="parameters">The parameters.</param>
         public object Invoke(MethodInfo methodInfo, object[] parameters)
         {
             _invocationCount++;
@@ -62,6 +94,9 @@ namespace NFake.Expectations
             return ReturnValue;
         }
 
+        /// <summary>
+        /// Verifies the expectation.
+        /// </summary>
         public void Verify()
         {
             if (_constraints.Any(c => !c.Evaluate()))

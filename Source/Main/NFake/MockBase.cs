@@ -1,4 +1,4 @@
-﻿//
+//
 // NFake is a mocking library for the .NET framework.
 // Copyright © Martin Tamme
 //
@@ -28,6 +28,14 @@ namespace NFake
         /// <summary>
         /// The proxy factory.
         /// </summary>
-        protected static readonly IProxyFactory ProxyFactory = new ProxyFactory();
+        protected static readonly IProxyFactory ProxyFactory;
+
+        /// <summary>
+        /// Initializes the <see cref="MockBase"/> class.
+        /// </summary>
+        static MockBase()
+        {
+            ProxyFactory = new ProxyFactory(MockInterceptionFilter.Instance);
+        }
     }
 }

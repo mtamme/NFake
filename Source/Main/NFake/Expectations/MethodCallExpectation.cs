@@ -24,10 +24,20 @@ using NFake.Language;
 
 namespace NFake.Expectations
 {
+    /// <summary>
+    /// Represents a method call expectation.
+    /// </summary>
     internal class MethodCallExpectation : ExpectationBase
     {
+        /// <summary>
+        /// The expression.
+        /// </summary>
         private readonly MethodCallExpression _expression;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MethodCallExpectation"/> class.
+        /// </summary>
+        /// <param name="lambdaExpression">The lambda expression.</param>
         public MethodCallExpectation(LambdaExpression lambdaExpression)
         {
             var expression = lambdaExpression.Body as MethodCallExpression;
@@ -61,12 +71,22 @@ namespace NFake.Expectations
         #endregion
     }
 
+    /// <summary>
+    /// Represents a method call expectation.
+    /// </summary>
     internal sealed class MethodCallExpectation<TReturn> : MethodCallExpectation, IReturnsThrows<TReturn>
     {
+        /// <summary>
+        /// The return value.
+        /// </summary>
         private object _returnValue;
 
-        public MethodCallExpectation(LambdaExpression expression)
-            : base(expression)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MethodCallExpectation`1"/> class.
+        /// </summary>
+        /// <param name="lambdaExpression">The lambda expression.</param>
+        public MethodCallExpectation(LambdaExpression lambdaExpression)
+            : base(lambdaExpression)
         {
             _returnValue = default(TReturn);
         }

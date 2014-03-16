@@ -24,12 +24,25 @@ using NFake.Language;
 
 namespace NFake.Expectations
 {
+    /// <summary>
+    /// Represents a property get expectation.
+    /// </summary>
     internal sealed class PropertyGetExpectation<TValue> : ExpectationBase, IGetsThrows<TValue>
     {
+        /// <summary>
+        /// The expression.
+        /// </summary>
         private readonly MemberExpression _expression;
 
+        /// <summary>
+        /// The return value.
+        /// </summary>
         private object _returnValue;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PropertyGetExpectation`1"/> class.
+        /// </summary>
+        /// <param name="lambdaExpression">The lambda expression.</param>
         public PropertyGetExpectation(LambdaExpression lambdaExpression)
         {
             var expression = lambdaExpression.Body as MemberExpression;
