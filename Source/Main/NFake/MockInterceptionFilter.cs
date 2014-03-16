@@ -69,6 +69,5 @@ namespace NFake
         }
 
         #endregion
-
     }
 }
