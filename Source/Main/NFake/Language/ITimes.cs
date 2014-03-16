@@ -1,4 +1,4 @@
-﻿//
+//
 // NFake is a mocking library for the .NET framework.
 // Copyright © Martin Tamme
 //
