@@ -47,7 +47,8 @@ namespace NFake
         public Mock(params object[] arguments)
         {
             _invocationHandler = new ExpectationInvocationHandler();
-            _object = new Lazy<TMock>(() => ProxyFactory.CreateProxy<TMock>(Type.EmptyTypes, _invocationHandler, arguments));
+            _object =
+                new Lazy<TMock>(() => ProxyFactory.CreateProxy<TMock>(Type.EmptyTypes, _invocationHandler, arguments));
         }
 
         /// <summary>

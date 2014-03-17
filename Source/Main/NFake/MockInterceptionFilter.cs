@@ -1,4 +1,4 @@
-//
+﻿//
 // NFake is a mocking library for the .NET framework.
 // Copyright © Martin Tamme
 //
@@ -62,7 +62,7 @@ namespace NFake
         public bool AcceptMethod(MethodInfo methodInfo)
         {
             // Don't intercept destructor method.
-            if (methodInfo.DeclaringType != typeof(object))
+            if (methodInfo.DeclaringType != typeof (object))
                 return true;
 
             return !String.Equals(methodInfo.Name, DestructorMethodName);
