@@ -37,7 +37,7 @@
   <ItemGroup>
     <Reference Include="NProxy.Core, Version=2.3.0.0, Culture=neutral, PublicKeyToken=75421c8750338fd2, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\NProxy.Core.2.3.1\lib\net35\NProxy.Core.dll</HintPath>
+      <HintPath>..\..\packages\NProxy.Core.2.3.2\lib\net35\NProxy.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
