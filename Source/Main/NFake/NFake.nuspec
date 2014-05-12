@@ -7,7 +7,7 @@
     <description>$description$</description>
     <language>en-US</language>
     <projectUrl>https://github.com/mtamme/NFake/</projectUrl>
-    <licenseUrl>http://www.gnu.org/licenses/lgpl-3.0.html</licenseUrl>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
     <copyright>$copyright$</copyright>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <tags>mock object mocking library fluent interface</tags>
