@@ -35,11 +35,12 @@
     <DocumentationFile>bin\Release\NFake.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NProxy.Core, Version=2.3.0.0, Culture=neutral, PublicKeyToken=75421c8750338fd2, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NProxy.Core.2.3.5\lib\net35\NProxy.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="NProxy.Core">
-      <HintPath>..\..\packages\NProxy.Core.2.3.4\lib\net35\NProxy.Core.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Expectations\InvocationExpectation.cs" />
